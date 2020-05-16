@@ -1,6 +1,8 @@
 from gpiozero import *
-from Schedule import *
+from raspberryPI.Schedule import *
 import time
+
+
 class Valve(DigitalOutputDevice):
 
     def __init__(self, gpioNum):
