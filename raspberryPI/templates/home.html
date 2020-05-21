@@ -1,28 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type=text/javascript>
-        $(function() {
-          $('a#turn_on').bind('click', function() {
-            $.getJSON('/turn_on',null,alert("you turned on the light"));
-            return null;
-          });
-        });
-</script>
-        <script type=text/javascript>
-        $(function() {
-          $('a#turn_off').bind('click', function() {
-            $.getJSON('/turn_off', null,alert("You turned off the zone"));
-            return false;
-          });
-        });
-</script>
-</head>
-<body>
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container-xl">
+        <div id="weather-cards">
+            <div class="card" style="max-width: 12rem;">
+                <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+             </div>
+            </div>
+                        <div class="card" style="max-width: 12rem;">
+                <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+             </div>
+            </div>
+                        <div class="card" style="max-width: 12rem;">
+                <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+             </div>
+            </div>
+                        <div class="card" style="max-width: 12rem;">
+                <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+             </div>
+            </div>
+                        <div class="card" style="max-width: 12rem;">
+                <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+             </div>
+            </div>
+                        <div class="card" style="max-width: 12rem;">
+                <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+             </div>
+            </div>
+                        <div class="card" style="max-width: 12rem;">
+                <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+             </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <a id="turn_on" style="font-size: 220px" href=# >turn on</a>
     <a id="turn_off" style="font-size: 220px" href=# >turn off</a>
-</body>
-</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type=text/javascript>
+        $(function() {
+          $('a#turn_on').bind('click', function() {
+            $.getJSON('/turn_on');
+          });
+        });
+        </script>
+        <script type=text/javascript>
+        $(function() {
+          $('a#turn_off').bind('click',function() {
+            $.getJSON('/turn_off');
+          });
+        });
+</script>
+{% endblock %}
+

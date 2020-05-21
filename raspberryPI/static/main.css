@@ -1,0 +1,21 @@
+header{
+    background-color: #A9A9A9;
+    border-bottom: 4px solid #111;
+    padding: 15px 60px;
+    font-size: 30px;
+}
+
+.nav-item a{
+    color: #C31C4A;
+
+}
+#weather-cards{
+    overflow-x: auto;
+}
+.card{
+    white-space: nowrap;
+    display: inline-block;
+}
+.card-body{
+    padding: 10px;
+}
