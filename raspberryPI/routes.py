@@ -1,5 +1,5 @@
 from raspberryPI import app
-from flask import render_template, url_for
+from flask import render_template, url_for, jsonify
 from raspberryPI import Valve
 from raspberryPI import valve1
 
@@ -16,3 +16,7 @@ def turnOn():
 def turnOff():
     valve1.off()
     return ''
+
+@app.route('/is_day_on/<int:dayOfWeek>')
+def isDayOn(dayOfWeek):
+    return jsonify(isValveOn=valve1.getDayBoolean(dayOfWeek))

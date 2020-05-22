@@ -15,7 +15,32 @@ header{
 .card{
     white-space: nowrap;
     display: inline-block;
+    max-width: 13%
+}
+.card-title{
+    font-weight: bold;
+    margin: 0px;
 }
 .card-body{
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+
+}
+.card-img-top{
+    max-height: 10rem;
+}
+.card-small-img{
+    max-width: 2rem;
+}
+.card-body{
+    min-height: 8rem;
+}
+.water-and-temp{
+    display: flex;
+    flex-direction: row;
+}
+.card-temp{
+    align-self: flex-end;
+    padding-top: 1vh;
 }
