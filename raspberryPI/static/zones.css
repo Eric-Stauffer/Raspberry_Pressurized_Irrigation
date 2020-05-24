@@ -1,0 +1,19 @@
+.card{
+    display: inline-block;
+    max-width: 40%;
+    min-width: 40%;
+    margin: 0 auto;
+
+}
+#zones-header{
+    padding: 30px 0px;
+}
+#zones-cards{
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+.card-title{
+    align-self: flex-start;
+}

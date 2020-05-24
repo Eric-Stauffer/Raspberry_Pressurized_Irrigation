@@ -1,0 +1,40 @@
+#weather-header{
+    padding: 30px 0px;
+}
+#weather-cards{
+    overflow-x: auto;
+    padding-bottom: 500px;
+    text-align: center;
+}
+.card {
+    display: inline-block;
+    white-space: nowrap;
+    max-width: 13.2%;
+    min-width: 13.2%;
+    margin: 0 auto;
+    border-color: black;
+}
+.card-title{
+    font-weight: bold;
+    margin: 0px;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    min-height: 14vw;
+}
+.card-small-img{
+    max-width: 5vmin;
+}
+
+.card-temp{
+    align-self: flex-end;
+    padding-top: 1vh;
+    font-size: 1vmax;
+}
+.card-title{
+    font-size: 1.2vmax;
+    align-self: flex-start;
+    margin: 0;
+}

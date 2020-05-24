@@ -1,46 +1,24 @@
 header{
-    background-color: #A9A9A9;
+    background-color: #387FCD;
     border-bottom: 4px solid #111;
-    padding: 15px 60px;
+    padding: 15px 30px;
     font-size: 30px;
 }
-
+body{
+    background-color: #F2F2F1;
+}
+.container-xl{
+    background-color: #FFFFFF;
+    text-align: center;
+}
 .nav-item a{
-    color: #C31C4A;
-
+    color: #ffffff;
 }
-#weather-cards{
-    overflow-x: auto;
+.nav li{
+    font-size: 4vw;
 }
-.card{
-    white-space: nowrap;
-    display: inline-block;
-    max-width: 13%
-}
-.card-title{
-    font-weight: bold;
-    margin: 0px;
-}
-.card-body{
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-
-}
-.card-img-top{
-    max-height: 10rem;
-}
-.card-small-img{
-    max-width: 2rem;
-}
-.card-body{
-    min-height: 8rem;
-}
-.water-and-temp{
-    display: flex;
-    flex-direction: row;
-}
-.card-temp{
-    align-self: flex-end;
-    padding-top: 1vh;
+#logo{
+    background: transparent;
+    width: 4vw;
+    height: 6vw;
 }
