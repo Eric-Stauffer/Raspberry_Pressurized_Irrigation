@@ -142,15 +142,17 @@ function whichZoneIsOn(data){
         else {document.getElementById("card-8-body").style.border = "1px solid black"}
 
 }
+    $(function () {
     $("a.zone-button").bind("click",function () {
       $.getJSON('/isValveOn/',function (data) {
+              console.log(data)
               whichZoneIsOn(data)
       })
 
-    })
-        $.getJSON('/isValveOn/',function (data) {
-              whichZoneIsOn(data)
-      })
+    })})
+  $.getJSON('/isValveOn/',function (data) {
+        whichZoneIsOn(data)
+  })
 
 
 
