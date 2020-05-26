@@ -20,7 +20,7 @@
     <label for="valve-1-duration" class="sr-only">Password</label>
     <input type="number" class="form-control" id="valve-1-duration" placeholder="30">
   </div>
-  <button type="submit" onclick="getData()" class="btn btn-primary mb-2">Submit Change</button>
+  <button type="submit" onclick="submitChange(1)" class="btn btn-primary mb-2">Submit Change</button>
 </form>
   </div>
 </div>
@@ -40,7 +40,7 @@
     <label for="valve-2-duration" class="sr-only">Password</label>
     <input type="number" class="form-control" id="valve-2-duration" placeholder="">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+  <button type="submit" onClick="submitChange(2)" class="btn btn-primary mb-2">Submit Change</button>
 </form>
   </div>
   </div>
@@ -60,7 +60,7 @@
     <label for="valve-3-duration" class="sr-only">Password</label>
     <input type="number" class="form-control" id="valve-3-duration" placeholder="">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+  <button type="submit" onClick="submitChange(3)" class="btn btn-primary mb-2">Submit Change</button>
 </form>
   </div>
   </div>
@@ -80,7 +80,7 @@
     <label for="valve-4-duration" class="sr-only">Password</label>
     <input type="number" class="form-control" id="valve-4-duration" placeholder="">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+  <button type="submit" onClick="submitChange(4)" class="btn btn-primary mb-2">Submit Change</button>
 </form>
   </div>
   </div>
@@ -100,7 +100,7 @@
     <label for="valve-5-duration" class="sr-only">Password</label>
     <input type="number" class="form-control" id="valve-5-duration" placeholder="">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+  <button type="submit" onClick="submitChange(5)" class="btn btn-primary mb-2">Submit Change</button>
 </form>
   </div>
   </div>
@@ -120,7 +120,7 @@
     <label for="valve-6-duration" class="sr-only">Password</label>
     <input type="number" class="form-control" id="valve-6-duration" placeholder="">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+  <button type="submit" onClick="submitChange(6)" class="btn btn-primary mb-2">Submit Change</button>
 </form>
   </div>
   </div>
@@ -140,7 +140,7 @@
     <label for="valve-7-duration" class="sr-only">Password</label>
     <input type="number" class="form-control" id="valve-7-duration" placeholder="">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+  <button type="submit" onClick="submitChange(7)" class="btn btn-primary mb-2">Submit Change</button>
 </form>
   </div>
   </div>
@@ -160,7 +160,7 @@
     <label for="valve-8-duration" class="sr-only">Password</label>
     <input type="number" class="form-control" id="valve-8-duration" placeholder="">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+  <button type="submit" onClick="submitChange(8)" class="btn btn-primary mb-2">Submit Change</button>
 </form>
   </div>
   </div>
@@ -263,24 +263,21 @@ function whichZoneIsOn(data){
         whichZoneIsOn(data)
   })
 
-function getData() {
-    var duration = document.getElementById("valve1-duration").value;
-    console.log(duration)
-
+itterateplaceholderDuration()
+function itterateplaceholderDuration() {
+    for (i = 1; i < 9; i++){placeholderDuration(i)}
 }
-placeholderDuration()
-function placeholderDuration() {
-    let count = 1
-    for (let i = 1; i < 9; i++){
-      $.getJSON("/get_duration/".concat(i),function (data) {
-        let zoneId= ("valve-".concat(count).concat("-duration"))
+function placeholderDuration(zone) {
+      $.getJSON("/get_duration/".concat(zone),function (data) {
+        let zoneId= ("valve-".concat(zone).concat("-duration"))
         document.getElementById(zoneId).placeholder = data
-        count++
+
       })
-    }
-
 }
-
+function submitChange(zone) {
+  var duration = document.getElementById("valve-".concat(zone).concat("-duration")).value;
+  $.getJSON("/set_duration/".concat(zone).concat("/").concat(duration))
+}
 
 </script>
 {% endblock%}

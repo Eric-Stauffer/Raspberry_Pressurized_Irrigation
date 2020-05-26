@@ -6,11 +6,22 @@ from raspberryPI import mySchedule
 @app.route('/home/')
 @app.route('/')
 def home():
-    return render_template('home.html',title="home")
+    return render_template('home.html',title="Home")
 
 @app.route('/zones/')
 def zones():
-    return render_template('zones.html', title="zones")
+    return render_template('zones.html', title="Zones")
+@app.route('/schedule/')
+def schedule():
+    return render_template('schedule.html',title="Schedule")
+
+@app.route('/get_duration/<int:zone>')
+def getDuration(zone):
+    return str(mySchedule.getZoneDuration(zone))
+
+@app.route('/set_duration/<int:zone>/<int:duration>')
+def setDuration(zone,duration):
+    return mySchedule.setZoneDuration(zone,duration)
 
 @app.route('/toggle/<int:zone>')
 def turnOn(zone):
