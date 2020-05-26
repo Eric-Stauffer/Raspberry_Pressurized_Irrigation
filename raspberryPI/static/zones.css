@@ -6,7 +6,6 @@
     text-decoration: none;
     border: 1px solid black;
 
-
 }
 a:hover{
     color: inherit;
@@ -26,8 +25,16 @@ a:hover{
     display: flex;
     border-top: 2px solid black;
     flex-direction: column;
+    padding: 1vw;
 }
 .card-title{
     align-self: flex-start;
      text-decoration: none;
+}
+.form-control{
+    max-width: 5vw;
+    min-width: 3vw;
+}
+.btn{
+    background-color: #387FCD;
 }

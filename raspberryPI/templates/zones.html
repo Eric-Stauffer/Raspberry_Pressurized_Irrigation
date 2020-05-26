@@ -5,62 +5,165 @@
 {% block content %}
 <h1 id="zones-header">My Zones</h1>
 <div  id="zones-cards">
-<a class="zone-button" id = "zone-1-toggle" href="#"><div class="card" id="card-1-body"style="width: 18rem;">
-  <img class="card-img-top" src="/static/images/grass.png" alt="">
+
+<!--card 1-->
+<div class="card" id="card-1-body"style="width: 18rem;"> <a class="zone-button" id = "zone-1-toggle" href="#">
+  <img class="card-img-top" src="/static/images/grass.png" alt=""> </a>
   <div class="card-body" >
     <h2 class="card-title">Zone 1</h2>
-    <p id="card-1-text" class="card-text"></p>
+    <form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Change Duration:">
   </div>
-</div></a>
-  <a class="zone-button" id = "zone-2-toggle" href="#"><div id="card-2-body" class="card" style="width: 18rem;">
-  <img class="card-img-top" src="/static/images/grass.png" alt="">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="valve-1-duration" class="sr-only">Password</label>
+    <input type="number" class="form-control" id="valve-1-duration" placeholder="30">
+  </div>
+  <button type="submit" onclick="getData()" class="btn btn-primary mb-2">Submit Change</button>
+</form>
+  </div>
+</div>
+
+<!--card 2  -->
+  <div id="card-2-body" class="card" style="width: 18rem;">
+  <a class="zone-button" id = "zone-2-toggle" href="#">
+    <img class="card-img-top" src="/static/images/grass.png" alt=""></a>
   <div class="card-body" >
     <h2 class="card-title">Zone 2</h2>
-    <p id="card-2-text" class="card-text"></p>
+    <form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Change Duration:">
   </div>
-  </div></a>
-  <a class="zone-button" id = "zone-3-toggle" href="#"><div class="card" id="card-3-body" style="width: 18rem;">
-  <img class="card-img-top" src="/static/images/grass.png" alt="">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="valve-2-duration" class="sr-only">Password</label>
+    <input type="number" class="form-control" id="valve-2-duration" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+</form>
+  </div>
+  </div>
+
+<!--  card 3-->
+<div class="card" id="card-3-body" style="width: 18rem;">
+    <a class="zone-button" id = "zone-3-toggle" href="#">
+      <img class="card-img-top" src="/static/images/grass.png" alt=""></a>
   <div class="card-body" >
     <h2 class="card-title">Zone 3</h2>
-    <p id="card-3-text" class="card-text"></p>
+    <form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Change Duration:">
   </div>
-  </div></a>
-  <a class="zone-button" id = "zone-4-toggle" href="#"><div class="card" id="card-4-body" style="width: 18rem;">
-  <img class="card-img-top" src="/static/images/grass.png" alt="">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="valve-3-duration" class="sr-only">Password</label>
+    <input type="number" class="form-control" id="valve-3-duration" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+</form>
+  </div>
+  </div>
+
+<!--  card 4-->
+  <div class="card" id="card-4-body" style="width: 18rem;">
+    <a class="zone-button" id = "zone-4-toggle" href="#">
+      <img class="card-img-top" src="/static/images/grass.png" alt=""></a>
   <div class="card-body" >
     <h2 class="card-title">Zone 4</h2>
-    <p id="card-4-text" class="card-text"></p>
+    <form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Change Duration:">
   </div>
-  </div></a>
-  <a class="zone-button" id = "zone-5-toggle" href="#"><div class="card" id="card-5-body" style="width: 18rem;">
-  <img class="card-img-top" src="/static/images/grass.png" alt="">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="valve-4-duration" class="sr-only">Password</label>
+    <input type="number" class="form-control" id="valve-4-duration" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+</form>
+  </div>
+  </div>
+
+<!--card 5  -->
+  <div class="card" id="card-5-body" style="width: 18rem;">
+    <a class="zone-button" id = "zone-5-toggle" href="#">
+      <img class="card-img-top" src="/static/images/grass.png" alt=""></a>
   <div class="card-body" >
     <h2 class="card-title">Zone 5</h2>
-    <p id="card-5-text" class="card-text"></p>
+    <form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Change Duration:">
   </div>
-  </div></a>
-  <a class="zone-button" id = "zone-6-toggle" href="#"><div class="card" id="card-6-body" style="width: 18rem;">
-  <img class="card-img-top" src="/static/images/grass.png" alt="">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="valve-5-duration" class="sr-only">Password</label>
+    <input type="number" class="form-control" id="valve-5-duration" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+</form>
+  </div>
+  </div>
+
+<!--  card 6-->
+  <div class="card" id="card-6-body" style="width: 18rem;">
+    <a class="zone-button" id = "zone-6-toggle" href="#">
+      <img class="card-img-top" src="/static/images/grass.png" alt=""></a>
   <div class="card-body" >
     <h2 class="card-title">Zone 6</h2>
-    <p id="card-6-text" class="card-text"></p>
+    <form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Change Duration:">
   </div>
-  </div></a>
-  <a class="zone-button" id = "zone-7-toggle" href="#"><div class="card" id="card-7-body" style="width: 18rem;">
-  <img class="card-img-top" src="/static/images/grass.png" alt="">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="valve-6-duration" class="sr-only">Password</label>
+    <input type="number" class="form-control" id="valve-6-duration" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+</form>
+  </div>
+  </div>
+
+<!--  card 7-->
+  <div class="card" id="card-7-body" style="width: 18rem;">
+    <a class="zone-button" id = "zone-7-toggle" href="#">
+      <img class="card-img-top" src="/static/images/grass.png" alt=""></a>
   <div class="card-body" >
     <h2 class="card-title">Zone 7</h2>
-    <p id="card-7-text" class="card-text"></p>
+    <form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Change Duration:">
   </div>
-  </div></a>
-  <a class="zone-button" id = "zone-8-toggle" href="#"><div class="card" id="card-8-body" style="width: 18rem;">
-  <img class="card-img-top" src="/static/images/grass.png" alt="">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="valve-7-duration" class="sr-only">Password</label>
+    <input type="number" class="form-control" id="valve-7-duration" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+</form>
+  </div>
+  </div>
+
+<!--  card 8-->
+  <div class="card" id="card-8-body" style="width: 18rem;">
+    <a class="zone-button" id = "zone-8-toggle" href="#">
+      <img class="card-img-top" src="/static/images/grass.png" alt=""></a>
   <div class="card-body">
     <h2 class="card-title">Zone 8</h2>
-    <p id="card-8-text" class="card-text"></p>
+    <form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Change Duration:">
   </div>
-  </div></a>
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="valve-8-duration" class="sr-only">Password</label>
+    <input type="number" class="form-control" id="valve-8-duration" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit Change</button>
+</form>
+  </div>
+  </div>
   </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -160,7 +263,23 @@ function whichZoneIsOn(data){
         whichZoneIsOn(data)
   })
 
+function getData() {
+    var duration = document.getElementById("valve1-duration").value;
+    console.log(duration)
 
+}
+placeholderDuration()
+function placeholderDuration() {
+    let count = 1
+    for (let i = 1; i < 9; i++){
+      $.getJSON("/get_duration/".concat(i),function (data) {
+        let zoneId= ("valve-".concat(count).concat("-duration"))
+        document.getElementById(zoneId).placeholder = data
+        count++
+      })
+    }
+
+}
 
 
 </script>
