@@ -100,66 +100,57 @@
 
     })
   })
-
-    $("a.zone-button").bind("click",function whatZoneIsON() {
-      $.getJSON('/isValveOn/',function (data) {
-            $.getJSON('/isValveOn/',function (data) {
-        if(data.valve1 === true){
+function whichZoneIsOn(data){
+            if(data.valve1 === true){
           document.getElementById("card-1-body").style.border = "5px solid #387FCD";
         }
         else {document.getElementById("card-1-body").style.border = "1px solid black"}
 
-      })
-            $.getJSON('/isValveOn/',function (data) {
-        if(data.valve2 === true){
+            if(data.valve2 === true){
           document.getElementById("card-2-body").style.border = "5px solid #387FCD";
         }
         else {document.getElementById("card-2-body").style.border = "1px solid black"}
 
-      })
-            $.getJSON('/isValveOn/',function (data) {
-        if(data.valve3 === true){
+            if(data.valve3 === true){
           document.getElementById("card-3-body").style.border = "5px solid #387FCD";
         }
         else {document.getElementById("card-3-body").style.border = "1px solid black"}
 
-      })
-            $.getJSON('/isValveOn/',function (data) {
-        if(data.valve4 === true){
+            if(data.valve4 === true){
           document.getElementById("card-4-body").style.border = "5px solid #387FCD";
         }
         else {document.getElementById("card-4-body").style.border = "1px solid black"}
 
-      })
-            $.getJSON('/isValveOn/',function (data) {
-        if(data.valve5 === true){
+            if(data.valve5 === true){
           document.getElementById("card-5-body").style.border = "5px solid #387FCD";
         }
         else {document.getElementById("card-5-body").style.border = "1px solid black"}
 
-      })
-            $.getJSON('/isValveOn/',function (data) {
-        if(data.valve6 === true){
+            if(data.valve6 === true){
           document.getElementById("card-6-body").style.border = "5px solid #387FCD";
         }
         else {document.getElementById("card-6-body").style.border = "1px solid black"}
 
-      })
-            $.getJSON('/isValveOn/',function (data) {
-        if(data.valve7 === true){
+            if(data.valve7 === true){
           document.getElementById("card-7-body").style.border = "5px solid #387FCD";
         }
         else {document.getElementById("card-7-body").style.border = "1px solid black"}
 
-      })
-        if(data.valve8 === true){
+            if(data.valve8 === true){
           document.getElementById("card-8-body").style.border = "5px solid #387FCD";
         }
         else {document.getElementById("card-8-body").style.border = "1px solid black"}
 
+}
+    $("a.zone-button").bind("click",function () {
+      $.getJSON('/isValveOn/',function (data) {
+              whichZoneIsOn(data)
       })
 
     })
+        $.getJSON('/isValveOn/',function (data) {
+              whichZoneIsOn(data)
+      })
 
 
 

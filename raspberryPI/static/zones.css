@@ -24,6 +24,7 @@ a:hover{
 }
 .card-body{
     display: flex;
+    border-top: 2px solid black;
     flex-direction: column;
 }
 .card-title{
