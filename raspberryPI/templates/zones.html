@@ -69,34 +69,41 @@
   $(function () {
     $('a#zone-1-toggle').bind("click",function () {
       $.getJSON("/toggle/1")
+      return false
 
     })
         $('a#zone-2-toggle').bind("click",function () {
       $.getJSON("/toggle/2")
+          return false
 
     })
             $('a#zone-3-toggle').bind("click",function () {
       $.getJSON("/toggle/3")
-
+              return false;
     })
             $('a#zone-4-toggle').bind("click",function () {
       $.getJSON("/toggle/4")
+              return false
 
     })
             $('a#zone-5-toggle').bind("click",function () {
       $.getJSON("/toggle/5")
+              return false
 
     })
             $('a#zone-6-toggle').bind("click",function () {
       $.getJSON("/toggle/6")
+              return false
 
     })
             $('a#zone-7-toggle').bind("click",function () {
       $.getJSON("/toggle/7")
+              return false
 
     })
             $('a#zone-8-toggle').bind("click",function () {
       $.getJSON("/toggle/8")
+              return false
 
     })
   })
@@ -145,7 +152,6 @@ function whichZoneIsOn(data){
     $(function () {
     $("a.zone-button").bind("click",function () {
       $.getJSON('/isValveOn/',function (data) {
-              console.log(data)
               whichZoneIsOn(data)
       })
 
