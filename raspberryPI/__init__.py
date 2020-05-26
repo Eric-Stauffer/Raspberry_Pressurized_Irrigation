@@ -1,9 +1,9 @@
 from flask import Flask, jsonify
-from raspberryPI.Valve import Valve
+from raspberryPI.Schedule import Schedule
 
 
 
-valve1 = Valve(5)
+mySchedule = Schedule()
 app = Flask(__name__)
 from raspberryPI import routes
 

@@ -1,17 +1,25 @@
 from datetime import *
+from raspberryPI.Valve import Valve
 
 class Schedule():
     def __init__(self):
-        self.monday = False
+        self.sunday = False
+        self.monday = True
         self.tuesday = True
-        self.wednesday = False
+        self.wednesday = True
         self.thursday = True
         self.friday = True
         self.saturday = False
-        self.sunday = True
         self.hour = 12
-        self.duration = 0
         self.minute = 0
+        self.valve1 = Valve(1)
+        self.valve2 = Valve(2)
+        self.valve3 = Valve(3)
+        self.valve4 = Valve(4)
+        self.valve5 = Valve(5)
+        self.valve6 = Valve(6)
+        self.valve7 = Valve(7)
+        self.valve8 = Valve(8)
 
     def isDayOn(self,dayNumber):
         if (dayNumber == 0):

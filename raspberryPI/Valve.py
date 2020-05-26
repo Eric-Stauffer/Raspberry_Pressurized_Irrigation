@@ -3,11 +3,12 @@ from raspberryPI.Schedule import *
 import time
 
 
-class Valve(DigitalOutputDevice):
+class Valve(LED):
+    duration = 0
 
     def __init__(self, gpioNum):
         super(Valve, self).__init__(gpioNum)
-        self.schedule = Schedule()
+
 
 
     def changeTime(self,newHour,newMinute):
@@ -38,7 +39,4 @@ class Valve(DigitalOutputDevice):
         time.sleep(length)
         self.off()
 
-    def quickRun(self):
-        self.on()
-        time.sleep(180)
-        self.off()
+
