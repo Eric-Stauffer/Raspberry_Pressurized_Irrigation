@@ -1,0 +1,165 @@
+{% extends "layout.html"%}
+{% block head %}
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='schedule.css') }}">
+{% endblock %}
+{% block content %}
+<h1 id="schedule-header">Schedule Options</h1>
+<button type="submit" onclick="submitChanges()" class="btn btn-primary mb-2">Submit Changes</button>
+<div id="options-container">
+   <div id="day-options">
+      <div class="form-check">
+  <input class="form-check-input" type="checkbox" checked="" id="dayCheckbox0" value="option1">
+  <label class="form-check-label" for="dayCheckbox1">Sunday</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" checked="" id="dayCheckbox1" value="option2">
+  <label class="form-check-label" for="dayCheckbox2">Monday</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" checked="" id="dayCheckbox2" value="option3">
+  <label class="form-check-label" for="dayCheckbox3">Tuesday</label>
+</div>
+      <div class="form-check">
+  <input class="form-check-input" type="checkbox" checked="" id="dayCheckbox3" value="option1">
+  <label class="form-check-label" for="dayCheckbox1">Wednesday</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" checked="" id="dayCheckbox4" value="option2">
+  <label class="form-check-label" for="dayCheckbox2">Thursday</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" checked="" id="dayCheckbox5" value="option3">
+  <label class="form-check-label" for="dayCheckbox3">Friday</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" checked="" id="dayCheckbox6" value="option3">
+  <label class="form-check-label" for="dayCheckbox3">Saturday</label>
+</div>
+   </div>
+
+
+   <div id="zone-options">
+            <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="zoneCheckbox1" value="option1">
+  <label class="form-check-label" for="dayCheckbox1">Zone 1</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="zoneCheckbox2" value="option2">
+  <label class="form-check-label" for="dayCheckbox2">Zone 2</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="zoneCheckbox3" value="option3">
+  <label class="form-check-label" for="dayCheckbox3">Zone 3</label>
+</div>
+      <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="zoneCheckbox4" value="option1">
+  <label class="form-check-label" for="dayCheckbox1">Zone 4</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="zoneCheckbox5" value="option2">
+  <label class="form-check-label" for="dayCheckbox2">Zone 5</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="zoneCheckbox6" value="option3">
+  <label class="form-check-label" for="dayCheckbox3">Zone 6</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="zoneCheckbox7" value="option3">
+  <label class="form-check-label" for="dayCheckbox3">Zone 7</label>
+</div>
+      <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="zoneCheckbox8" value="option3">
+  <label class="form-check-label" for="dayCheckbox3">Zone 8</label>
+</div>
+   </div>
+
+   <div id="time-options">
+      <h5>Set Start Time</h5>
+      <div id="clock-setter">
+   <input type="number" class="form-control" id="schedule-hour-setter" placeholder="0" min="0" max="23">
+      <h2>:</h2>
+   <input type="number" class="form-control" id="schedule-minute-setter" placeholder="0" min="0" max="59">
+         </div>
+   </div>
+</div>
+<script type="text/javascript">
+itterateZoneChecked()
+function itterateZoneChecked() {
+    for (i = 1; i < 9; i++){zoneChecked(i)}
+}
+function zoneChecked(zone) {
+      $.getJSON("/get_zone_bool/".concat(zone),function (data) {
+        let zoneId = ("zoneCheckbox".concat(zone))
+        document.getElementById(zoneId).checked = data.zoneBool
+
+      })
+}
+itterateDayChecked()
+function itterateDayChecked() {
+    for (i = 0; i < 7; i++){dayChecked(i)}
+}
+function dayChecked(zone) {
+      $.getJSON("/is_day_on/".concat(zone),function (data) {
+        let dayId = ("dayCheckbox".concat(zone))
+         let checkedBox = ''
+         if(data.isDayOn === true){checkedBox = "checked"}
+        document.getElementById(dayId).checked = checkedBox
+
+      })
+}
+getHour()
+function getHour() {
+   $.getJSON("/get_hour/",function (data) {
+      document.getElementById("schedule-hour-setter").placeholder = data.hour
+   })
+
+}
+getMinute()
+function getMinute() {
+   $.getJSON("/get_minute/",function (data) {
+      document.getElementById("schedule-minute-setter").placeholder = data.minute
+   })
+
+}
+
+function itterateSetDays() {
+   for(i = 0; i < 7; i++){setDays(i)}
+
+}
+function setDays(day) {
+   let checked = 0
+   if(document.getElementById("dayCheckbox".concat(day)).checked === true){checked = 1}
+   $.getJSON("/set_day/".concat(day).concat("/").concat(checked))
+}
+function itterateSetZones() {
+   for (i = 1; i < 9; i++){
+      setZones(i)
+   }
+}
+function setZones(zone) {
+   let checked = 0
+   if(document.getElementById("zoneCheckbox".concat(zone)).checked === true){checked = 1}
+   $.getJSON("/set_zone/".concat(zone).concat("/").concat(checked))
+
+}
+function setTime() {
+   let hour = document.getElementById("schedule-hour-setter").value
+   if(hour !== ''){
+   $.getJSON("/set_hour/".concat(hour))}
+
+   let minute = document.getElementById("schedule-minute-setter").value
+   if (minute !== '') {
+   $.getJSON("/set_minute/".concat(minute))}
+
+}
+function submitChanges() {
+   setTime()
+   itterateSetDays()
+   itterateSetZones()
+   location.reload();
+   return false;
+
+}
+
+</script>
+{% endblock %}

@@ -1,6 +1,5 @@
 from raspberryPI import app
 from flask import render_template, url_for, jsonify
-from raspberryPI import Valve
 from raspberryPI import mySchedule
 
 @app.route('/home/')
@@ -22,6 +21,19 @@ def getDuration(zone):
 @app.route('/set_duration/<int:zone>/<int:duration>')
 def setDuration(zone,duration):
     return mySchedule.setZoneDuration(zone,duration)
+
+@app.route('/get_zone_bool/<int:zone>')
+def getZoneBool(zone):
+    return jsonify(zoneBool=mySchedule.getZoneBool(zone))
+
+
+@app.route('/get_hour/')
+def getHour():
+    return jsonify(hour=mySchedule.hour)
+
+@app.route('/get_minute/')
+def getMinute():
+    return jsonify(minute=mySchedule.minute)
 
 @app.route('/toggle/<int:zone>')
 def turnOn(zone):
@@ -101,7 +113,28 @@ def turnOn(zone):
 
 @app.route('/is_day_on/<int:dayOfWeek>')
 def isDayOn(dayOfWeek):
-    return jsonify(isValveOn=mySchedule.isDayOn(dayOfWeek))
+    return jsonify(isDayOn=mySchedule.isDayOn(dayOfWeek))
+
+@app.route('/set_day/<int:day>/<int:bool>')
+def setDay(day,bool):
+    mySchedule.setDay(day,bool)
+    return ''
+
+@app.route('/set_zone/<int:zone>/<int:bool>')
+def setZone(zone,bool):
+    mySchedule.setZoneBool(zone,bool)
+    return ''
+@app.route('/set_hour/<int:hour>')
+def setHour(hour):
+    mySchedule.hour = hour
+    return ''
+
+@app.route('/set_minute/<int:minute>')
+def setMinute(minute):
+    mySchedule.minute = minute
+    return ''
+
+
 @app.route('/isValveOn/')
 def isValveOn():
     return jsonify(valve1=mySchedule.valve1.is_lit,
