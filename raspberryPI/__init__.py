@@ -14,8 +14,8 @@ def runMySchedule():
         print(mySchedule.hour, mySchedule.minute, mySchedule.thursday, mySchedule.valve1.setOn)
         if (int(dt.now().strftime("%-H")) == mySchedule.hour and int(dt.now().strftime("%-M")) == mySchedule.minute):
             mySchedule.runDaySchedule(int(dt.now().strftime("%w")))
-            time.sleep(2)
-        time.sleep(59)
+            time.sleep(59)
+        time.sleep(10)
 
 clock = threading.Thread(target=runMySchedule)
 app = Flask(__name__)
