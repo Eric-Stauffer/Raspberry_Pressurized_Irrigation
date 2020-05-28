@@ -32,9 +32,12 @@ a:hover{
      text-decoration: none;
 }
 .form-control{
-    max-width: 5vw;
-    min-width: 3vw;
+    max-width: 5rem;
+    min-width: 5rem;
 }
 .btn{
     background-color: #387FCD;
+}
+.card-img-top{
+    height: 10%;
 }

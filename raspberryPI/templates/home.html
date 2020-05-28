@@ -74,7 +74,7 @@
     }
     function isWatering(dayNumber,cardNumber) {
     $.getJSON('/is_day_on/'.concat(dayNumber),function (data) {
-        if(data.isValveOn === true){
+        if(data.isDayOn === true){
             document.getElementById('card-'.concat(cardNumber).concat('-small-img')).src = "/static/images/raindrop.png";
         }
         else {document.getElementById('card-'.concat(cardNumber).concat('-small-img')).innerHTML = "Not Watering <br> Today"}
@@ -139,9 +139,11 @@ let daysOfTheWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'
             case "\"mist\"":
                 imgUrl = " http://openweathermap.org/img/wn/50d@2x.png"
                 break;
+            case "\"light rain\"":
+                imgUrl = "http://openweathermap.org/img/wn/10d@2x.png"
             default:
                 console.log(weatherString)
-                imgUrl = " http://openweathermap.org/img/wn/13d@2x.png"
+                imgUrl = " http://openweathermap.org/img/wn/10d@2x.png"
         }
         document.getElementById("card-".concat(dayNumber).concat("-img")).src = imgUrl;
 

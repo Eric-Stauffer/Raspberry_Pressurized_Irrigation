@@ -4,10 +4,17 @@ import time
 
 
 class Valve(LED):
-    duration = 0
 
-    def __init__(self, gpioNum):
+    def __init__(self, gpioNum,duration=None,setOn=False):
         super(Valve, self).__init__(gpioNum)
+        if (duration == None):
+            self.duration = 0
+        else:
+            self.duration = duration
+        if(setOn == False):
+            self.setOn = False
+        else:
+            self.setOn = True
 
 
 
@@ -28,8 +35,6 @@ class Valve(LED):
     def getDayBoolean(self,dayNumber):
         return self.schedule.isDayOn(dayNumber)
 
-    def getDuration(self):
-        return self.schedule.duration
 
     def getHour(self):
         return self.schedule.getHour()

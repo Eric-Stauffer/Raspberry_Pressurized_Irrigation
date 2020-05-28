@@ -20,7 +20,8 @@ def getDuration(zone):
 
 @app.route('/set_duration/<int:zone>/<int:duration>')
 def setDuration(zone,duration):
-    return mySchedule.setZoneDuration(zone,duration)
+    mySchedule.setZoneDuration(zone,duration)
+    return ''
 
 @app.route('/get_zone_bool/<int:zone>')
 def getZoneBool(zone):
@@ -126,7 +127,7 @@ def setZone(zone,bool):
     return ''
 @app.route('/set_hour/<int:hour>')
 def setHour(hour):
-    mySchedule.hour = hour
+    mySchedule.setHour(hour)
     return ''
 
 @app.route('/set_minute/<int:minute>')
