@@ -25,7 +25,7 @@
         descriptionOfWeather(i)
     }
     function descriptionOfWeather(dayNumber){
-    $.getJSON('https://api.openweathermap.org/data/2.5/onecall?lat=40.098201599999996&lon=-111.6209152&exclude=minutely,current,hourly&units=imperial&appid=3a00f281352563677d5a0ec2ddb2232c',function (data) {
+    $.getJSON('https://api.openweathermap.org/data/2.5/onecall?lat=40.098201599999996&lon=-111.6209152&exclude=minutely,current,hourly&units=imperial&appid=',function (data) {
         let weatherDescription = JSON.stringify(data.daily[dayNumber].weather[0].description);
         let weatherTempMin = JSON.stringify(data.daily[dayNumber].temp.min);
         weatherTempMin = Math.round(weatherTempMin)
