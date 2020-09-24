@@ -70,8 +70,5 @@ function setTime() {
 function submitChanges() {
    setTime()
    itterateSetDays()
-   itterateSetZones()
-   location.reload();
    return false;
-
 }

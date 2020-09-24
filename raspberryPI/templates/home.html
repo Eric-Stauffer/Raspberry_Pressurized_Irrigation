@@ -6,65 +6,67 @@
 {% block content %}
 
         <h1 id="weather-header">Weekly Schedule</h1>
-        <div id="weather-cards">
-            <div class="card">
-                <img class="card-img-top" id="card-0-img" src="" alt="Card image cap">
-            <div class="card-body">
-                <b><h4 class="card-title" id="card-0-title">Card title</h4></b>
-                <h6 class="card-temp" id="card-0-temp" >70°/84°</h6>
-                <img class="card-small-img" id="card-0-small-img"></img>
-             </div>
-            </div>
-                        <div class="card">
-                <img class="card-img-top" id="card-1-img" src="" alt="Card image cap">
-            <div class="card-body">
-                <b><h4 class="card-title" id="card-1-title">Card title</h4></b>
-                <h6 class="card-temp" id="card-1-temp" >70°/84°</h6>
-                <img class="card-small-img" id="card-1-small-img"></img>
-             </div>
-            </div>
-                        <div class="card">
-                <img class="card-img-top" id="card-2-img" src="" alt="Card image cap">
-            <div class="card-body">
-                <b><h4 class="card-title" id="card-2-title">Card title</h4></b>
-                <h6 class="card-temp" id="card-2-temp" >70°/84°</h6>
-                <img class="card-small-img" id="card-2-small-img"></img>
-             </div>
-            </div>
-                        <div class="card">
-                <img class="card-img-top" id="card-3-img" src="" alt="Card image cap">
-            <div class="card-body">
-                <b><h4 class="card-title" id="card-3-title">Card title</h4></b>
-                <h6 class="card-temp" id="card-3-temp" >70°/84°</h6>
-                <img class="card-small-img" id="card-3-small-img"></img>
-             </div>
-            </div>
-                        <div class="card">
-                <img class="card-img-top" id="card-4-img" src="" alt="Card image cap">
-            <div class="card-body">
-                <b><h4 class="card-title" id="card-4-title">Card title</h4></b>
-                <h6 class="card-temp" id="card-4-temp" >70°/84°</h6>
-                <img class="card-small-img" id="card-4-small-img"></img>
-             </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" id="card-5-img" src="" alt="Card image cap">
-            <div class="card-body">
-                <b><h4 class="card-title" id="card-5-title">Card title</h4></b>
-                <h6 class="card-temp" id="card-5-temp" >70°/84°</h6>
-                <img class="card-small-img" id="card-5-small-img"></img>
-             </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" id="card-6-img" src="" alt="Card image cap">
-            <div class="card-body">
-                <b><h4 class="card-title" id="card-6-title">Card title</h4></b>
-                <h6 class="card-temp" id="card-6-temp" >70°/84°</h6>
-                <img class="card-small-img" id="card-6-small-img"></img>
-             </div>
-            </div>
-        </div>
-
+        <div id="weather-cards"></div>
 <script src="{{ url_for('static', filename='home.js')}}"> </script>
+<!--        <div id="weather-cards">-->
+<!--            <div class="card">-->
+<!--                <img class="card-img-top" id="card-0-img" src="" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <b><h4 class="card-title" id="card-0-title">Card title</h4></b>-->
+<!--                <h6 class="card-temp" id="card-0-temp" >70°/84°</h6>-->
+<!--                <img class="card-small-img" id="card-0-small-img"></img>-->
+<!--             </div>-->
+<!--            </div>-->
+<!--                        <div class="card">-->
+<!--                <img class="card-img-top" id="card-1-img" src="" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <b><h4 class="card-title" id="card-1-title">Card title</h4></b>-->
+<!--                <h6 class="card-temp" id="card-1-temp" >70°/84°</h6>-->
+<!--                <img class="card-small-img" id="card-1-small-img"></img>-->
+<!--             </div>-->
+<!--            </div>-->
+<!--                        <div class="card">-->
+<!--                <img class="card-img-top" id="card-2-img" src="" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <b><h4 class="card-title" id="card-2-title">Card title</h4></b>-->
+<!--                <h6 class="card-temp" id="card-2-temp" >70°/84°</h6>-->
+<!--                <img class="card-small-img" id="card-2-small-img"></img>-->
+<!--             </div>-->
+<!--            </div>-->
+<!--                        <div class="card">-->
+<!--                <img class="card-img-top" id="card-3-img" src="" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <b><h4 class="card-title" id="card-3-title">Card title</h4></b>-->
+<!--                <h6 class="card-temp" id="card-3-temp" >70°/84°</h6>-->
+<!--                <img class="card-small-img" id="card-3-small-img"></img>-->
+<!--             </div>-->
+<!--            </div>-->
+<!--                        <div class="card">-->
+<!--                <img class="card-img-top" id="card-4-img" src="" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <b><h4 class="card-title" id="card-4-title">Card title</h4></b>-->
+<!--                <h6 class="card-temp" id="card-4-temp" >70°/84°</h6>-->
+<!--                <img class="card-small-img" id="card-4-small-img"></img>-->
+<!--             </div>-->
+<!--            </div>-->
+<!--            <div class="card">-->
+<!--                <img class="card-img-top" id="card-5-img" src="" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <b><h4 class="card-title" id="card-5-title">Card title</h4></b>-->
+<!--                <h6 class="card-temp" id="card-5-temp" >70°/84°</h6>-->
+<!--                <img class="card-small-img" id="card-5-small-img"></img>-->
+<!--             </div>-->
+<!--            </div>-->
+<!--            <div class="card">-->
+<!--                <img class="card-img-top" id="card-6-img" src="" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <b><h4 class="card-title" id="card-6-title">Card title</h4></b>-->
+<!--                <h6 class="card-temp" id="card-6-temp" >70°/84°</h6>-->
+<!--                <img class="card-small-img" id="card-6-small-img"></img>-->
+<!--             </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
 {% endblock %}
 

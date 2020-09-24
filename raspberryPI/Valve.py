@@ -16,8 +16,6 @@ class Valve(LED):
         else:
             self.setOn = True
 
-
-
     def changeTime(self,newHour,newMinute):
         self.schedule.setHour(newHour)
         self.schedule.setMinute(newMinute)
