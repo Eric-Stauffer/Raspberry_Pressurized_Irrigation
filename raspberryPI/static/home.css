@@ -11,12 +11,8 @@
     white-space: nowrap;
     max-width: 13.2%;
     min-width: 13.2%;
-    margin: 0 auto;
+    margin: 4px;
     border-color: black;
-}
-.card-title{
-    font-weight: bold;
-    margin: 0px;
 }
 .card-body{
     display: flex;
@@ -35,6 +31,6 @@
 }
 .card-title{
     font-size: 1.2vmax;
-    align-self: flex-start;
-    margin: 0;
+    margin: 0 auto;
+    font-weight: bold;
 }

@@ -41,3 +41,6 @@ a:hover{
 .card-img-top{
     height: 10%;
 }
+.card{
+    width: 18rem;
+}

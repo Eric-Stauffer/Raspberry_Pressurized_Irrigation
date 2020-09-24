@@ -24,4 +24,3 @@ from raspberryPI import routes
 
 
 
-
